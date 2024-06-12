@@ -1,5 +1,5 @@
 image:
-  imageName: nvcr.io/nim/meta/llama3-8b-instruct:latest
+  imageName: nvcr.io/nvidia/tritonserver:latest
   pullPolicy: IfNotPresent
   model: llama3-8b-instruct
   numGpus: 1
