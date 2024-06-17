@@ -35,22 +35,22 @@ This is an illustration of how NIM works whenever we invoke a supported model on
 
 ### Docs
 
-[NVIDIA NIM Introduction](https://docs.nvidia.com/nim/large-language-models/latest/introduction.html)
-[llama-3-8b on NVIDIA NGC Catalog](https://catalog.ngc.nvidia.com/orgs/nim/teams/meta/containers/llama3-8b-instruct)
-[Installing the NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit)
-[NIM for LLMs - Prerequisites](https://docs.nvidia.com/nim/large-language-models/latest/getting-started.html#ngc-authentication)
-[Arto Bendiken - Alpine CUDA](https://arto.s3.amazonaws.com/notes/cuda)
-[Pulling images from a Private Registry - Kubernetes](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
-[OKE Node Resizing for very large container images](https://blogs.oracle.com/ateam/post/oke-node-sizing-for-very-large-container-images)
-[Kubernetes - Setting resource quotas on namespaces](https://kubernetes.io/docs/concepts/policy/resource-quotas/)
-[OCI - cloud-init scripts for OKE](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengusingcustomcloudinitscripts.htm)
-[Kubernetes - Unexpected EOF](https://stackoverflow.com/questions/53677592/docker-pull-unexpected-eof)
-[OCI Compute - Microk8s installation for local compute](https://microk8s.io/docs/getting-started)
-[OCI Compute - Microk8s official repository](https://github.com/canonical/microk8s)
-[nim-deploy official repository](https://github.com/NVIDIA/nim-deploy)
-[Launching a NIM with a minimal configuration](https://github.com/NVIDIA/nim-deploy/tree/main/helm)
-[NIM LLMs - Getting started](https://docs.nvidia.com/nim/large-language-models/latest/getting-started.html)
-[NVIDIA NGC CLI - Getting started](https://docs.ngc.nvidia.com/cli/cmd.html)
+- [NVIDIA NIM Introduction](https://docs.nvidia.com/nim/large-language-models/latest/introduction.html)
+- [llama-3-8b on NVIDIA NGC Catalog](https://catalog.ngc.nvidia.com/orgs/nim/teams/meta/containers/llama3-8b-instruct)
+- [Installing the NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit)
+- [NIM for LLMs - Prerequisites](https://docs.nvidia.com/nim/large-language-models/latest/getting-started.html#ngc-authentication)
+- [Arto Bendiken - Alpine CUDA](https://arto.s3.amazonaws.com/notes/cuda)
+- [Pulling images from a Private Registry - Kubernetes](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
+- [OKE Node Resizing for very large container images](https://blogs.oracle.com/ateam/post/oke-node-sizing-for-very-large-container-images)
+- [Kubernetes - Setting resource quotas on namespaces](https://kubernetes.io/docs/concepts/policy/resource-quotas/)
+- [OCI - cloud-init scripts for OKE](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengusingcustomcloudinitscripts.htm)
+- [Kubernetes - Unexpected EOF](https://stackoverflow.com/questions/53677592/docker-pull-unexpected-eof)
+- [OCI Compute - Microk8s installation for local compute](https://microk8s.io/docs/getting-started)
+- [OCI Compute - Microk8s official repository](https://github.com/canonical/microk8s)
+- [nim-deploy official repository](https://github.com/NVIDIA/nim-deploy)
+- [Launching a NIM with a minimal configuration](https://github.com/NVIDIA/nim-deploy/tree/main/helm)
+- [NIM LLMs - Getting started](https://docs.nvidia.com/nim/large-language-models/latest/getting-started.html)
+- [NVIDIA NGC CLI - Getting started](https://docs.ngc.nvidia.com/cli/cmd.html)
 
 ## 1. Set up OKE Instance on OCI
 
