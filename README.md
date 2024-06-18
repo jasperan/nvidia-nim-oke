@@ -4,12 +4,13 @@
 
 ## Introduction
 
-NVIDIA NIM is a set of easy-to-use microservices designed to accelerate the deployment of generative AI models across the cloud, data center, and workstations. NIM’s are categorized by model family and a per model basis. For example, NVIDIA NIM for large language models (LLMs) brings the power of state-of-the-art LLMs to enterprise applications, providing unmatched natural language processing and understanding capabilities.
-
-NIM makes it easy for IT and DevOps teams to self-host large language models (LLMs) in their own managed environments while still providing developers with industry standard APIs that allow them to build powerful copilots, chatbots, and AI assistants that can transform their business. Leveraging NVIDIA’s cutting-edge GPU acceleration and scalable deployment, NIM offers the fastest path to inference with unparalleled performance.
+NVIDIA NIM is a set of easy-to-use microservices designed to accelerate the deployment of generative AI models across the cloud, data center, and workstations. NIM packages are categorized by model family and a per model basis. For example, NVIDIA NIM for large language models (LLMs) brings the power of state-of-the-art LLMs to enterprise applications, providing unmatched natural language processing and understanding capabilities.
 
 In this solution, we demonstrate how quickly you can get started with NVIDIA NIM (as a Large Language Model inference framework) and Oracle Container Engine for Kubernetes (as the deployment and orchestration system) on OCI.
 
+NIM makes it easy for IT and DevOps teams to self-host large language models (LLMs) in their own managed environments while still providing developers with industry standard APIs that allow them to build powerful copilots, chatbots, and AI assistants that can transform their business. Leveraging NVIDIA’s cutting-edge GPU acceleration and scalable deployment, NIM offers the fastest path to inference with unparalleled performance.
+
+OCI provides managed Kubernetes, together with some NVIDIA A10 Tensor Core GPUs as Kubernetes nodes, to rapidly accelerate your onboarding into AI. Thanks to NVIDIA NIM, you will be able to explore from a vast collection of models, containers, Helm charts and AI projects in many fields (bioengineering, speech recognition, object detection...), and easily pull these models into your Kubernetes cluster. Following a few steps, you'll be ready to perform inference, invoke and manipulate these models (training, finetuning, testing and using them) in your environment.
 The application has the following components:
 
 - Oracle Container Engine for Kubernetes (OKE)
@@ -51,6 +52,7 @@ This is an illustration of how NIM works whenever we invoke a supported model on
 - [Launching a NIM with a minimal configuration](https://github.com/NVIDIA/nim-deploy/tree/main/helm)
 - [NIM LLMs - Getting started](https://docs.nvidia.com/nim/large-language-models/latest/getting-started.html)
 - [NVIDIA NGC CLI - Getting started](https://docs.ngc.nvidia.com/cli/cmd.html)
+- [Running Docker inside a container](https://stackoverflow.com/questions/76150514/running-docker-inside-a-container)
 
 ## 1. Set up OKE Instance on OCI
 
@@ -64,7 +66,7 @@ First, let's create an OKE instance in our OCI tenancy. To create an OKE Cluster
 
 > Note you can specify whichever GPU shape available in OCI, each node will be created with the selected shape (you can have multiple OKE nodes in the cluster, so be mindful of resource spending.)
 
-Make sure you select a custom boot volume size. For this solution, this is especially important. OKE nodes in a node pool use their boot volume for pod storage. The default size for the boot volume is `46.6GB`. On a typical, Oracle Linux 8 based node, the root filesystem has a capacity around 38G, and available space for pod images of around 12GB. This, in our case, is not enough, as we'll be operating with Large Language Models, which typically are comprised of several files which can amount up to 100GB-500GB in some extreme cases. Therefore, we need to select a custom boot size during creation:
+Make sure you select a custom boot volume size. For this solution, this is especially important. OKE nodes in a node pool use their boot volume for pod storage. The default size for the boot volume is `46.6GB`. On a typical, Oracle Linux 8 based node, the root filesystem has a capacity around 38GB, and available space for pod images of around 12GB. This, in our case, is not enough, as we'll be operating with Large Language Models, which typically are comprised of several files which can amount up to 100GB-500GB in some extreme cases. Therefore, we need to select a custom boot size during creation:
 
 ![custom boot size](./img/custom_volume_size.PNG)
 
@@ -173,7 +175,7 @@ In this repository, we offer three ways to deploy inference: with Helm, with Kse
     ```bash
     kubectl -n nim create secret docker-registry registry-secret --docker-server=nvcr.io --docker-username='$oauthtoken' --docker-password=$NGC_API_KEY
     ```
-    
+
     > More information on other methods to create a secret [here.](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
 
 2. From the file `pod/llama3-pod.yaml`, let's create the pod with K8s:
