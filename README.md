@@ -518,7 +518,6 @@ If you're planning on running any NIM solution directly into an OCI Compute inst
 
 6. After this, a Docker container will be created from the image, and you'll be able to make local requests to the Kubernetes node's public IP address. We will explain inference further in the next chapter.
 
-TODO: Can you do a run the inference section that uses local setup and running it from laptop terminal against OKE and Ubuntu image
 7. We have also prepared a Python script called `scripts/invoke_llama_3.py` which uses the *OpenAI completions* module to communicate with the model and allows us to automate querying the LLM and receiving responses programatically. To run this script, you will need to create an environment, activate it, install the requirements in `scripts/requirements.txt` and run the application.
 
     ![openai completions](./img/completions_openai.PNG)
