@@ -10,7 +10,10 @@ spec:
     image: nvcr.io/nim/meta/llama3-8b-instruct:latest    
     securityContext:
       privileged: true
-    command: ["tail", "-f", "/dev/null"]
+    env:
+      - name: NGC_API_KEY
+        value: "<YOUR_NGC_API_KEY>"
+    #command: ["tail", "-f", "/dev/null"]
     resources:
       limits:
         nvidia.com/gpu: 1

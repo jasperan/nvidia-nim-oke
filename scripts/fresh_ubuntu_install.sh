@@ -40,5 +40,7 @@ mkdir -p "$LOCAL_NIM_CACHE"
 
 echo "$NGC_API_KEY" | docker login nvcr.io --username '$oauthtoken' --password-stdin
 
+# launch dockerd if it wasn't previously launched on the background.
+nohup dockerd &
 # Start the LLM NIM
 docker run -it --privileged --rm --name=$CONTAINER_NAME --runtime=nvidia --gpus 1 --env NGC_API_KEY="$NGC_API_KEY" -v "$LOCAL_NIM_CACHE:/opt/nim/cache" -u $(id -u) -p 8000:8000 $IMG_NAME
